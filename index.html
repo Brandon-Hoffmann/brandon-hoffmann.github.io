@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brandon Hoffmann</title>
+<meta name="description" content="Brandon Hoffmann — based in Berwyn Heights, Maryland, in the Washington, DC area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #26221e;
+    --muted: #6e655c;
+    --accent: #e0a458;
+    --accent-text: #8f6113;
+    --accent-dark: #26221e;
+    --line: #d5c9b6;
+    --card: #f4eee3;
+    --bg: #ffffff;
+    --input: #f4eee3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--bg);
+  }
+  h1, h2, h3, .btn, nav a {
+    font-family: 'Oswald', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .nav-links a:hover { color: var(--accent-text); }
+  .nav-social { display: flex; gap: 16px; }
+  .nav-social a {
+    color: var(--accent-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  header.hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+  header.hero h1 { font-size: 2.6rem; line-height: 1.15; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
+  .buttons { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-dark); }
+  .btn-outline { border: 2px solid var(--accent-text); color: var(--accent-text); background: transparent; }
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+  section h2 { font-size: 1.6rem; margin-bottom: 16px; font-weight: 500; letter-spacing: 0.5px; }
+  section p { color: var(--muted); margin-bottom: 12px; }
+  section a { color: var(--accent-text); }
+  .cards { display: grid; gap: 16px; margin-top: 20px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 500; letter-spacing: 0.5px; }
+  .card p { font-size: 0.95rem; margin-bottom: 14px; }
+  .card a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+  .card .soon { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+  form { margin-top: 20px; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent-text);
+  }
+  .signup-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .signup-row input[type="email"] {
+    flex: 1;
+    min-width: 220px;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  .signup-row input[type="email"]:focus { outline: none; border-color: var(--accent-text); }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; }
+  footer a { color: var(--accent-text); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Brandon Hoffmann</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/brandon-hoffmann">GitHub</a>
+      <a href="https://www.linkedin.com/in/brandonkarlhoffmann/">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Brandon Hoffmann</h1>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#projects">See what I'm building</a>
+      <a class="btn btn-outline" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Across entrepreneurship, venture capital, government affairs, and philanthropy, I've built my career at the intersection of strategy and execution. From scaling digital audiences and launching physical storefronts to supporting C-suite executives and former government leaders, I lead by supporting high-trust relationships that move teams from vision to results.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p>Each venture has its own page. This hub is the front door to all of them.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Karl Cleaning</h3>
+        <p>Residential cleaning in Berwyn Heights and the 20740 area. Owner-operated — I clean your home myself. Flat-rate pricing by home size. No hourly clock.</p>
+        <span class="soon">Coming soon</span>
+      </div>
+      <div class="card">
+        <h3>Riot Gum</h3>
+        <p>Caffeinated gum — for the doers. A brand being built first, product to follow. Join the interest list to hear when it launches.</p>
+        <span class="soon">Coming soon</span>
+      </div>
+      <div class="card">
+        <h3>Poetry</h3>
+        <p>I write and publish poetry, and read live on Whatnot. Books, live readings, and new work — all on this page.</p>
+        <a href="https://brandonkarlhoffmann.com">Visit Poetry &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Photography</h3>
+        <p>Portraits and family sessions around Washington, DC.</p>
+        <span class="soon">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="wrap">
+    <h2>Stay in the loop</h2>
+    <p>Get an email when something new launches — new poems, books, and ventures. No spam.</p>
+    <!-- Replace YOUR-USERNAME with your Buttondown username -->
+    <form action="https://buttondown.com/api/emails/embed-subscribe/YOUR-USERNAME" method="post">
+      <div class="signup-row">
+        <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <input type="hidden" value="1" name="embed">
+        <button class="btn btn-primary" type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Send me a message and I'll get back to you.</p>
+    <!-- Replace YOUR-GOOGLE-APPS-SCRIPT-URL with your deployed web app URL -->
+    <form action="YOUR-GOOGLE-APPS-SCRIPT-URL" method="POST">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="topic">What is this about?</label>
+        <select id="topic" name="topic">
+          <option>Karl Cleaning</option>
+          <option>Riot Gum</option>
+          <option>Poetry</option>
+          <option>Photography</option>
+          <option>Operations / work</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Brandon Hoffmann</p>
+    <p><a href="#top">Back to the top</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
