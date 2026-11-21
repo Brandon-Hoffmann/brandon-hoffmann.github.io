@@ -65,6 +65,9 @@
   .nav-links a:hover { color: var(--accent); }
   .nav-links .btn { padding: 8px 18px; font-size: 0.95rem; background: #fff; color: var(--accent); border: 2px solid var(--accent); }
   .nav-links .btn:hover { background: var(--accent); color: #fff; }
+  @media (max-width: 640px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
   header.hero { padding: 56px 0 48px; border-bottom: 1px solid var(--line); }
   header.hero h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 12px; font-weight: 700; }
   header.hero .lede { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin-bottom: 8px; }
@@ -200,7 +203,6 @@
       <a href="#pricing">Pricing</a>
       <a href="#area">Service Area</a>
       <a href="#faq">FAQ</a>
-      <a href="https://brandonhoffmann.com">brandonhoffmann.com</a>
       <a class="btn btn-primary" href="#book">Book</a>
     </div>
   </div>
