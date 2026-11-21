@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HandySon — A Helping Hand Around the House</title>
+<meta name="description" content="HandySon is handyman help for older people in Washington, DC, Prince George's County, and Montgomery County. Tech help, small electrical and plumbing fixes, and jobs around the house — at a price agreed before any work starts. No booking fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #166534;
+    --accent-hover: #14532d;
+    --text: #1c1917;
+    --muted: #57534e;
+    --line: #e8e0d5;
+    --card: #ffffff;
+    --cream: #faf6f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    background: #ffffff;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: 'Zilla Slab', Georgia, serif; font-weight: 700; line-height: 1.2; }
+  h2 { font-size: 2rem; margin-bottom: 12px; }
+  h3 { font-size: 1.35rem; margin-bottom: 8px; }
+  p { margin-bottom: 16px; }
+  a { color: var(--accent); }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    height: 64px;
+  }
+  nav .brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  nav .links { display: flex; gap: 24px; }
+  nav .links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  nav .links a:hover { color: var(--accent); }
+  .btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: #ffffff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-outline {
+    background: #ffffff;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+  }
+  .btn-outline:hover { background: var(--accent); color: #ffffff; }
+  nav .btn { padding: 9px 20px; font-size: 1rem; }
+  @media (max-width: 640px) {
+    nav .links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(rgba(15, 35, 22, 0.78), rgba(15, 35, 22, 0.78)), url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    color: #ffffff;
+    padding: 88px 0;
+  }
+  .hero .wrap { max-width: 760px; }
+  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.4rem); margin-bottom: 16px; }
+  .hero .sub { font-size: 1.3rem; color: #e7e5e4; margin-bottom: 12px; }
+  .hero .tag { font-size: 1.15rem; color: #d6d3d1; margin-bottom: 28px; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-light {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  .btn-light:hover { background: #ffffff; color: var(--accent-hover); }
+
+  /* Sections */
+  section { padding: 48px 0; }
+  section.alt { background: var(--cream); }
+  section .lede { font-size: 1.15rem; color: var(--muted); max-width: 720px; }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  @media (max-width: 700px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .service-card .body { padding: 24px; }
+  .service-card p { color: var(--muted); margin-bottom: 0; }
+  .service-card .note {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  @media (max-width: 760px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  .price-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+  }
+  .price-card .price {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 8px 0 12px;
+  }
+  .price-card p { color: var(--muted); margin-bottom: 0; }
+  .no-fees {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  @media (max-width: 760px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+  .step .num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .step p { color: var(--muted); margin-bottom: 0; }
+
+  /* Service area */
+  .area-list {
+    list-style: none;
+    margin-top: 16px;
+    font-size: 1.15rem;
+  }
+  .area-list li { margin-bottom: 8px; }
+  .area-list li::before { content: "\2713  "; color: var(--accent); font-weight: 800; }
+
+  /* Form */
+  form { margin-top: 24px; }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #d6d3d1;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  form .btn { width: 100%; padding: 14px; font-size: 1.1rem; }
+
+  /* FAQ */
+  .faq-item { margin-bottom: 24px; }
+  .faq-item h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .faq-item p { color: var(--muted); margin-bottom: 0; }
+
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">HandySon</a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#area">Service Area</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary" href="#book">Book a Visit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>A helping hand around the house.</h1>
+    <p class="sub">Handyman help for Washington, DC, Prince George&rsquo;s County, and Montgomery County.</p>
+    <p class="tag">HandySon is like having a grandson around the house &mdash; patient, honest, and handy. Small fixes, tech help, and odd jobs, at a price agreed before any work starts.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#book">Book a Visit</a>
+      <a class="btn btn-light" href="#pricing">See Pricing</a>
+    </div>
+  </div>
+</header>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <h2>What we can help with</h2>
+    <p class="lede">Small jobs, done properly. If a job is bigger than we can handle, we will tell you honestly and point you to a licensed pro.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80" alt="A smartphone home screen">
+        <div class="body">
+          <h3>Tech Help</h3>
+          <p>Phones, tablets, computers, Wi-Fi, printers, and TVs. We set things up, fix what is not working, and explain it in plain words &mdash; no jargon, no rush.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80" alt="An electrician working on a panel">
+        <div class="body">
+          <h3>Small Electrical Fixes</h3>
+          <p>New light fixtures, switches, dimmers, and ceiling fans. Replacing what is already there, done safely.</p>
+          <p class="note">Small jobs only &mdash; no rewiring or panel work.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80" alt="A chrome bathtub faucet">
+        <div class="body">
+          <h3>Small Plumbing Fixes</h3>
+          <p>Leaky faucets, running toilets, slow drains, and new showerheads. The little leaks and drips that drive you mad.</p>
+          <p class="note">Small jobs only &mdash; no repiping or gas lines.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1200&q=80" alt="Hand tools in a toolbox">
+        <div class="body">
+          <h3>Around the House</h3>
+          <p>Hang shelves and TVs, put furniture together, patch small holes, fix sticking doors and drawers. All the odd jobs on the list.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Straightforward pricing</h2>
+    <p class="lede">One clear price, agreed before any work starts. No booking fees, no service fees, no surprises.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Quick Visit</h3>
+        <div class="price">$75</div>
+        <p>One small job, done in under an hour. Most tech help and single fixes.</p>
+      </div>
+      <div class="price-card">
+        <h3>Half-Day Help</h3>
+        <div class="price">$250</div>
+        <p>Up to 4 hours. Bring us a list &mdash; we will work through it.</p>
+      </div>
+      <div class="price-card">
+        <h3>Bigger Jobs</h3>
+        <div class="price">Free quote</div>
+        <p>We look, we agree a price in writing, then we start. No work without your okay.</p>
+      </div>
+    </div>
+    <p class="no-fees">The price we agree is the price you pay.</p>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Tell us what you need</h3>
+        <p>Fill in the form below. Tell us what is broken or what you need help with, in your own words.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>We agree a price</h3>
+        <p>We call you back, talk it through, and agree a price before any work starts.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>We fix it</h3>
+        <p>We show up on time, do the job, and tidy up after ourselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <h2>Where we work</h2>
+    <ul class="area-list">
+      <li>Washington, DC</li>
+      <li>Prince George&rsquo;s County, Maryland</li>
+      <li>Montgomery County, Maryland</li>
+    </ul>
+    <p style="margin-top: 16px; color: var(--muted);">Just outside the area? Ask in the form &mdash; we will tell you honestly if we can come.</p>
+  </div>
+</section>
+
+<section id="book" class="alt">
+  <div class="wrap">
+    <h2>Book a visit</h2>
+    <p class="lede">Fill this in and we will call you back to talk it through and agree a price.</p>
+    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="post">
+      <input type="hidden" name="Form" value="HandySon booking">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" name="Phone" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email">
+        </div>
+        <div class="field">
+          <label for="address">Home address *</label>
+          <input type="text" id="address" name="Address" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="help">What do you need help with?</label>
+          <select id="help" name="Help needed">
+            <option>Tech help</option>
+            <option>Small electrical fix</option>
+            <option>Small plumbing fix</option>
+            <option>Around the house</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Preferred date</label>
+          <input type="date" id="date" name="Preferred date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="notes">Tell us more</label>
+        <textarea id="notes" name="Notes" placeholder="What is broken, or what do you need help with?"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send My Request</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h3>Are you licensed electricians or plumbers?</h3>
+      <p>No. HandySon does small jobs that do not need a license. If your job needs a licensed pro, we will tell you honestly and help you find one.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if the job turns out bigger than expected?</h3>
+      <p>We stop and explain. We agree a new price before going on. You never get a surprise bill.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need to buy parts myself?</h3>
+      <p>Either way works. We can bring common parts, or you can buy them yourself. Parts are charged at cost &mdash; we agree it beforehand.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I pay?</h3>
+      <p>We will agree how you would like to pay when we agree the price.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What areas do you cover?</h3>
+      <p>Washington, DC, Prince George&rsquo;s County, and Montgomery County. If you are just outside, ask in the form &mdash; we will tell you honestly if we can come.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 HandySon</p>
+  </div>
+</footer>
+
+</body>
+</html>
