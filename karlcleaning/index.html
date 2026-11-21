@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karl Cleaning — Residential Cleaning in Prince George's County, MD</title>
+<meta name="description" content="Karl Cleaning — owner-operated residential cleaning in Prince George's County, Maryland. Flat-rate pricing by home size. No hourly clock.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1f2937;
+    --muted: #5b6472;
+    --accent: #0284c7;
+    --accent-dark: #0369a1;
+    --line: #e5e7eb;
+    --card: #f8fafc;
+    --bg: #ffffff;
+    --input: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--bg);
+  }
+  h1, h2, h3, .btn, nav a {
+    font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links .btn { padding: 8px 18px; font-size: 0.95rem; background: #fff; color: var(--accent); border: 2px solid var(--accent); }
+  .nav-links .btn:hover { background: var(--accent); color: #fff; }
+  header.hero { padding: 56px 0 48px; border-bottom: 1px solid var(--line); }
+  header.hero h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 12px; font-weight: 700; }
+  header.hero .lede { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin-bottom: 8px; }
+  .hero-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 28px;
+    display: block;
+  }
+  @media (max-width: 640px) { .hero-img { height: 240px; } }
+  .buttons { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-outline { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+  section h2 { font-size: 1.6rem; margin-bottom: 16px; font-weight: 700; }
+  section p { color: var(--muted); margin-bottom: 12px; }
+  section a { color: var(--accent); }
+  .cards { display: grid; gap: 16px; margin-top: 20px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 700; }
+  .card .best { font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; }
+  .card ul { list-style: none; }
+  .card ul li { padding: 4px 0 4px 20px; position: relative; font-size: 0.95rem; color: var(--muted); }
+  .card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 0.98rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-family: 'Montserrat', 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  td.price, th.price { text-align: right; font-weight: 600; color: var(--text); white-space: nowrap; }
+  tr:nth-child(even) td { background: var(--card); }
+  .price-note { font-size: 0.95rem; }
+  .area-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 16px;
+    display: block;
+  }
+  @media (max-width: 640px) { .area-img { height: 200px; } }
+  .steps { list-style: none; counter-reset: step; }
+  .steps li { padding: 10px 0 10px 44px; position: relative; color: var(--muted); }
+  .steps li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 10px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 28px;
+  }
+  .steps li strong { color: var(--text); }
+  form { margin-top: 20px; }
+  .field { margin-bottom: 16px; }
+  .field-row { display: grid; gap: 16px; }
+  @media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } }
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  .field textarea { min-height: 100px; resize: vertical; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .faq-item { margin-bottom: 20px; }
+  .faq-item h3 { font-size: 1.05rem; margin-bottom: 4px; font-weight: 700; }
+  .faq-item p { margin-bottom: 0; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Karl Cleaning</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#area">Service Area</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://brandonhoffmann.com">brandonhoffmann.com</a>
+      <a class="btn btn-primary" href="#book">Book</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>A clean home, done right.</h1>
+    <p class="lede">Residential cleaning in College Park, MD.</p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#book">Get My Price</a>
+      <a class="btn btn-outline" href="#pricing">See Pricing</a>
+    </div>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80" alt="Bright, clean modern living room" loading="lazy">
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we clean</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Clean modern kitchen" loading="lazy">
+        <h3>Standard Clean</h3>
+        <p class="best">Best for regular upkeep and recurring visits.</p>
+        <ul>
+          <li>Kitchen counters, sink, and appliance exteriors</li>
+          <li>Bathrooms — toilets, tubs, showers, sinks, and mirrors</li>
+          <li>Dusting, floors vacuumed and mopped throughout</li>
+          <li>Bedrooms and living areas tidied and dusted</li>
+          <li>Trash emptied</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80" alt="Clean bright bathroom" loading="lazy">
+        <h3>Deep Clean</h3>
+        <p class="best">Best for a first visit, spring cleaning, or a home that needs extra attention.</p>
+        <ul>
+          <li>Everything in a Standard Clean, plus:</li>
+          <li>Baseboards, doors, and light switches wiped</li>
+          <li>Inside microwave, and extra detail in kitchen and bathrooms</li>
+          <li>Ceiling fans and vents dusted</li>
+          <li>Extra time on built-up areas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Flat-rate pricing — no hourly rates</h2>
+
+    <h3>Standard Clean — starting prices</h3>
+    <table>
+      <tr><th>Bedrooms</th><th>Square footage</th><th class="price">Price</th></tr>
+      <tr><td>1 bed</td><td>Up to 1,000 sq ft</td><td class="price">$195</td></tr>
+      <tr><td>2 bed</td><td>1,001–1,400 sq ft</td><td class="price">$225</td></tr>
+      <tr><td>3 bed</td><td>1,401–1,900 sq ft</td><td class="price">$265</td></tr>
+      <tr><td>4 bed</td><td>1,901–2,500 sq ft</td><td class="price">$309</td></tr>
+      <tr><td>5 bed</td><td>2,501–3,200 sq ft</td><td class="price">$359</td></tr>
+      <tr><td>5+ bed</td><td>Over 3,200 sq ft</td><td class="price">Custom quote</td></tr>
+    </table>
+
+    <h3>Deep Clean — starting prices</h3>
+    <table>
+      <tr><th>Bedrooms</th><th>Square footage</th><th class="price">Price</th></tr>
+      <tr><td>1 bed</td><td>Up to 1,000 sq ft</td><td class="price">$265</td></tr>
+      <tr><td>2 bed</td><td>1,001–1,400 sq ft</td><td class="price">$309</td></tr>
+      <tr><td>3 bed</td><td>1,401–1,900 sq ft</td><td class="price">$359</td></tr>
+      <tr><td>4 bed</td><td>1,901–2,500 sq ft</td><td class="price">$419</td></tr>
+      <tr><td>5 bed</td><td>2,501–3,200 sq ft</td><td class="price">$479</td></tr>
+      <tr><td>5+ bed</td><td>Over 3,200 sq ft</td><td class="price">Custom quote</td></tr>
+    </table>
+    <p class="price-note">Move-in / move-out cleans are priced as a Deep Clean.</p>
+
+    <h3>Save on recurring cleans</h3>
+    <table>
+      <tr><th>Schedule</th><th class="price">Discount</th></tr>
+      <tr><td>Weekly</td><td class="price">15% off Standard Clean pricing</td></tr>
+      <tr><td>Every 2 weeks</td><td class="price">10% off Standard Clean pricing</td></tr>
+      <tr><td>Monthly</td><td class="price">Standard Clean pricing</td></tr>
+    </table>
+    <p class="price-note">Recurring clients get priority scheduling.</p>
+
+    <h3>Add-ons</h3>
+    <table>
+      <tr><th>Add-on</th><th class="price">Price</th></tr>
+      <tr><td>Inside refrigerator</td><td class="price">$40</td></tr>
+      <tr><td>Inside oven</td><td class="price">$40</td></tr>
+      <tr><td>Interior windows</td><td class="price">$50</td></tr>
+      <tr><td>Laundry — wash, dry, and fold (per load)</td><td class="price">$35</td></tr>
+      <tr><td>Inside cabinets (per kitchen)</td><td class="price">$50</td></tr>
+    </table>
+    <p class="price-note">Add any add-on in the booking form below.</p>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <h2>Service area</h2>
+    <p>Karl Cleaning serves Prince George's County, Maryland — including Berwyn Heights (20740), College Park, and Greenbelt.</p>
+    <p>Outside the area? Ask in the form — I will let you know honestly if I can make it work.</p>
+    <img class="area-img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Bright, clean living and dining area" loading="lazy">
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Tell me about your home</strong> — fill out the short form below with your size, clean type, and preferred date.</li>
+      <li><strong>Get your confirmed price</strong> — I reply by text with your flat-rate price and available times.</li>
+      <li><strong>Enjoy a clean home</strong> — I arrive with all supplies, clean, and confirm payment after the job is done.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>Book your clean</h2>
+    <p>Fill this out and I will text you back with your confirmed flat-rate price and available times.</p>
+    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="POST">
+      <input type="hidden" name="Form" value="Karl Cleaning booking">
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-name">Name</label>
+          <input type="text" id="bk-name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="bk-phone">Phone</label>
+          <input type="tel" id="bk-phone" name="Phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bk-email">Email</label>
+        <input type="email" id="bk-email" name="Email">
+      </div>
+      <div class="field">
+        <label for="bk-address">Home address</label>
+        <input type="text" id="bk-address" name="Home address" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-bedrooms">Bedrooms</label>
+          <select id="bk-bedrooms" name="Bedrooms">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>5+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bk-bathrooms">Bathrooms</label>
+          <select id="bk-bathrooms" name="Bathrooms">
+            <option>1</option>
+            <option>1.5</option>
+            <option>2</option>
+            <option>2.5</option>
+            <option>3</option>
+            <option>3.5</option>
+            <option>4+</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-sqft">Square footage</label>
+          <input type="text" id="bk-sqft" name="Square footage">
+        </div>
+        <div class="field">
+          <label for="bk-date">Preferred date</label>
+          <input type="text" id="bk-date" name="Preferred date">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-type">Type of clean</label>
+          <select id="bk-type" name="Type of clean">
+            <option>Standard Clean</option>
+            <option>Deep Clean</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bk-often">How often</label>
+          <select id="bk-often" name="How often">
+            <option>One time</option>
+            <option>Weekly</option>
+            <option>Every 2 weeks</option>
+            <option>Monthly</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bk-addons">Add-ons</label>
+        <input type="text" id="bk-addons" name="Add-ons" placeholder="Refrigerator, oven, windows, laundry, cabinets">
+      </div>
+      <div class="field">
+        <label for="bk-notes">Anything I should know?</label>
+        <textarea id="bk-notes" name="Notes" placeholder="Pets, access, priority rooms, etc."></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send My Request</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h3>How is pricing set?</h3>
+      <p>By bedrooms and square footage, at a flat rate. You confirm the price before the appointment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need to be home?</h3>
+      <p>No. Many clients are out. Just tell me how to get in and how to lock up in the booking form.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you bring supplies?</h3>
+      <p>Yes. I bring everything needed. If you prefer I use your products, just say so in the form.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I need to reschedule?</h3>
+      <p>Text me as early as you can and we will find a new time.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I pay?</h3>
+      <p>We will confirm payment options by text when your booking is confirmed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Karl Cleaning</p>
+  </div>
+</footer>
+
+</body>
+</html>
