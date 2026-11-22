@@ -4,32 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brandon Hoffmann</title>
-<meta name="description" content="Brandon Hoffmann — based in Berwyn Heights, Maryland, in the Washington, DC area.">
+<meta name="description" content="Brandon Hoffmann, based in Berwyn Heights, Maryland, in the Washington, DC area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --text: #26221e;
-    --muted: #6e655c;
-    --accent: #e0a458;
-    --accent-text: #8f6113;
-    --accent-dark: #26221e;
-    --line: #d5c9b6;
-    --card: #f4eee3;
-    --bg: #ffffff;
-    --input: #f4eee3;
+    --text: #2b2118;
+    --muted: #7a6a58;
+    --accent: #0284c7;
+    --accent-text: #0284c7;
+    --accent-dark: #fbf7ee;
+    --line: #ddd2bd;
+    --card: #faf6ec;
+    --bg: #f3ecdd;
+    --input: #faf6ec;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
     color: var(--text);
     line-height: 1.6;
     background: var(--bg);
   }
   h1, h2, h3, .btn, nav a {
-    font-family: 'Oswald', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Libre Caslon Text', Georgia, serif;
   }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
   nav {
@@ -49,20 +50,22 @@
     flex-wrap: wrap;
   }
   .nav-brand {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--text);
     text-decoration: none;
     margin-right: auto;
+    border: 1.5px solid var(--text);
+    border-radius: 4px;
+    padding: 2px 8px;
   }
   .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-weight: 400;
   }
   .nav-links a:hover { color: var(--accent-text); }
   .nav-social { display: flex; gap: 16px; }
@@ -70,41 +73,60 @@
     color: var(--accent-text);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px 4px;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
   }
   header.hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
-  header.hero h1 { font-size: 2.6rem; line-height: 1.15; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
+  header.hero h1 { font-size: clamp(2.4rem, 7vw, 3.2rem); line-height: 1.15; margin-bottom: 8px; font-weight: 700; }
   .buttons { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
     display: inline-block;
     padding: 11px 22px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.05rem;
-    letter-spacing: 0.5px;
     cursor: pointer;
     border: none;
   }
   .btn-primary { background: var(--accent); color: var(--accent-dark); }
   .btn-outline { border: 2px solid var(--accent-text); color: var(--accent-text); background: transparent; }
   section { padding: 48px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
-  section h2 { font-size: 1.6rem; margin-bottom: 16px; font-weight: 500; letter-spacing: 0.5px; }
+  section h2 { font-size: 1.6rem; margin-bottom: 16px; font-weight: 700; }
   section p { color: var(--muted); margin-bottom: 12px; }
   section a { color: var(--accent-text); }
   .cards { display: grid; gap: 16px; margin-top: 20px; }
-  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr 1fr; } }
+  @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr 1fr; } }
   .card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 20px;
   }
-  .card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 500; letter-spacing: 0.5px; }
+  .card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; }
   .card p { font-size: 0.95rem; margin-bottom: 14px; }
-  .card a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+  .card a { color: var(--accent-text); font-weight: 600; text-decoration: none; white-space: nowrap; font-size: 0.9rem; }
   .card .soon { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+  .archive { padding: 36px 0; }
+  .archive h2 { font-size: 1.3rem; }
+  .archive .card { padding: 16px; }
+  .archive .card h3 { font-size: 1.05rem; }
+  .archive .card p { font-size: 0.9rem; }
   form { margin-top: 20px; }
   .field { margin-bottom: 16px; }
   .field label {
@@ -146,6 +168,27 @@
   }
   .signup-row input[type="email"]:focus { outline: none; border-color: var(--accent-text); }
   footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 640px) {
+    .nav-inner { padding: 10px 16px; gap: 12px; }
+    .nav-toggle { display: flex; }
+    .nav-links, .nav-social { display: none; }
+    nav.open .nav-inner { padding-bottom: 14px; }
+    nav.open .nav-links, nav.open .nav-social {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      gap: 4px;
+    }
+    nav.open .nav-links { border-top: 1px solid var(--line); padding-top: 10px; }
+    .nav-links a, .nav-social a { font-size: 1rem; padding: 4px 0; }
+    header.hero { padding: 40px 0 32px; }
+    .buttons { margin-top: 20px; }
+    section { padding: 32px 0; }
+    .cards { gap: 12px; }
+    .card { padding: 16px; }
+    .archive { padding: 28px 0; }
+    .archive .card { padding: 14px; }
+  }
   footer a { color: var(--accent-text); text-decoration: none; }
 </style>
 </head>
@@ -153,10 +196,13 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">Brandon Hoffmann</a>
+    <a class="nav-brand" href="#top">BKH</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#archive">Archive</a>
+      <a href="/photo">Photography</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-social">
@@ -185,32 +231,55 @@
 
 <section id="projects">
   <div class="wrap">
-    <h2>Projects</h2>
+    <h2>Current Projects</h2>
     <div class="cards">
       <div class="card">
-        <h3>Karl Cleaning</h3>
-        <p>Residential cleaning in Berwyn Heights and the 20740 area. Owner-operated — I clean your home myself. Flat-rate pricing by home size. No hourly clock.</p>
-        <a href="/karlcleaning">Visit Karl Cleaning &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>HandySon</h3>
-        <p>Handyman help for older people in DC, Prince George&rsquo;s County, and Montgomery County. Tech help, small fixes, and jobs around the house &mdash; like having a grandson around the house.</p>
-        <a href="/handyson">Visit HandySon &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Riot Gum</h3>
-        <p>Caffeinated gum — for the doers. A brand being built first, product to follow. Join the interest list to hear when it launches.</p>
-        <a href="/riotgum">Visit Riot Gum &rarr;</a>
-      </div>
-      <div class="card">
         <h3>Poetry</h3>
-        <p>I write and publish poetry, and read live on Whatnot. Books, live readings, and new work — all on this page.</p>
+        <p>I write and publish poetry, and read live on Whatnot.</p>
         <a href="https://brandonkarlhoffmann.com/">Visit Poetry &rarr;</a>
       </div>
       <div class="card">
         <h3>Photography</h3>
-        <p>Portraits and family sessions around Washington, DC.</p>
+        <p>BKH Photo, portraits, weddings, family, corporate.</p>
         <span class="soon">Coming soon</span>
+      </div>
+      <div class="card">
+        <h3>Karl Cleaning</h3>
+        <p>Residential cleaning in Prince George&rsquo;s County. Flat-rate pricing by home size. No hourly clock.</p>
+        <a href="/karlcleaning">Visit Karl Cleaning &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>HandySon</h3>
+        <p>Handyman help for older people in DC and Maryland. Tech help, small fixes, and jobs around the house, like having a grandson around the house.</p>
+        <a href="/handyson">Visit HandySon &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Riot Gum</h3>
+        <p>Caffeinated gum, for the doers. Join the waitlist.</p>
+        <a href="/riotgum">Visit Riot Gum &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="archive" class="archive">
+  <div class="wrap">
+    <h2>Project Archive</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Devin Super Tramp Productions</h3>
+        <p>From 2014&ndash;2019, I worked on Team Super Tramp.</p>
+        <a href="/devinsupertramp">Visit the archive &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>K&auml;ru Stroller System</h3>
+        <p>A self-stabilizing stroller bassinet I co-founded (2020&ndash;2024). Designed, engineered, and prototyped, closed before reaching market.</p>
+        <a href="/karu">Visit the archive &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Dirty Dough Franchise</h3>
+        <p>A franchise cookie shop I built from an empty storefront in Laurel, MD (2023&ndash;2025).</p>
+        <a href="/dirtydough">Visit the archive &rarr;</a>
       </div>
     </div>
   </div>
@@ -219,7 +288,7 @@
 <section id="newsletter">
   <div class="wrap">
     <h2>Stay in the loop</h2>
-    <p>Get an email when something new launches — new poems, books, and ventures. No spam.</p>
+    <p>Get an email when something new launches. New poems, books, and ventures. No spam.</p>
     <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="post">
       <div class="signup-row">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
@@ -247,6 +316,7 @@
         <label for="topic">What is this about?</label>
         <select id="topic" name="topic">
           <option>Karl Cleaning</option>
+          <option>HandySon</option>
           <option>Riot Gum</option>
           <option>Poetry</option>
           <option>Photography</option>
@@ -270,5 +340,20 @@
   </div>
 </footer>
 
+<script>
+var nav = document.querySelector('nav');
+var toggle = document.querySelector('.nav-toggle');
+toggle.addEventListener('click', function () {
+  var open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.querySelectorAll('.nav-links a, .nav-social a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 </body>
 </html>
+
