@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organizing by Karl, Home Organization in Washington, DC &amp; Maryland</title>
+<meta name="description" content="Organizing by Karl, home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate sessions, no hourly clock.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Organizing by Karl, Home Organization in Washington, DC &amp; Maryland">
+<meta property="og:description" content="Home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate sessions, no hourly clock.">
+<meta property="og:url" content="https://brandonhoffmann.com/organizingbykarl">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Organizing by Karl",
+  "url": "https://brandonhoffmann.com/organizingbykarl",
+  "description": "Home organizing in Washington, DC and Maryland. Flat-rate organizing sessions for closets, kitchens, home offices, garages, and moves.",
+  "priceRange": "$195 - $480",
+  "areaServed": [
+    { "@type": "City", "name": "Washington, District of Columbia" },
+    { "@type": "AdministrativeArea", "name": "Prince George's County, Maryland" },
+    { "@type": "AdministrativeArea", "name": "Montgomery County, Maryland" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1f2937;
+    --muted: #5b6472;
+    --accent: #0f766e;
+    --accent-dark: #115e59;
+    --line: #e5e7eb;
+    --card: #f8fafc;
+    --bg: #ffffff;
+    --input: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--bg);
+  }
+  h1, h2, h3, .btn, nav a {
+    font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links .btn { padding: 8px 18px; font-size: 0.95rem; background: #fff; color: var(--accent); border: 2px solid var(--accent); }
+  .nav-links .btn:hover { background: var(--accent); color: #fff; }
+  @media (max-width: 640px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
+  header.hero { padding: 56px 0 48px; border-bottom: 1px solid var(--line); }
+  header.hero h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 12px; font-weight: 700; }
+  header.hero .lede { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin-bottom: 8px; }
+  .hero-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 28px;
+    display: block;
+  }
+  @media (max-width: 640px) { .hero-img { height: 240px; } }
+  .buttons { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-outline { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+  section h2 { font-size: 1.6rem; margin-bottom: 16px; font-weight: 700; }
+  section p { color: var(--muted); margin-bottom: 12px; }
+  section a { color: var(--accent); }
+  .cards { display: grid; gap: 16px; margin-top: 20px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 700; }
+  .card .best { font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; }
+  .card ul { list-style: none; }
+  .card ul li { padding: 4px 0 4px 20px; position: relative; font-size: 0.95rem; color: var(--muted); }
+  .card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 0.98rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-family: 'Montserrat', 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  td.price, th.price { text-align: right; font-weight: 600; color: var(--text); white-space: nowrap; }
+  tr:nth-child(even) td { background: var(--card); }
+  .price-note { font-size: 0.95rem; }
+  .area-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 16px;
+    display: block;
+  }
+  @media (max-width: 640px) { .area-img { height: 200px; } }
+  .steps { list-style: none; counter-reset: step; }
+  .steps li { padding: 10px 0 10px 44px; position: relative; color: var(--muted); }
+  .steps li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 10px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 28px;
+  }
+  .steps li strong { color: var(--text); }
+  form { margin-top: 20px; }
+  .field { margin-bottom: 16px; }
+  .field-row { display: grid; gap: 16px; }
+  @media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } }
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  .field textarea { min-height: 100px; resize: vertical; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .faq-item { margin-bottom: 20px; }
+  .faq-item h3 { font-size: 1.05rem; margin-bottom: 4px; font-weight: 700; }
+  .faq-item p { margin-bottom: 0; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Organizing by Karl</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#area">Service Area</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-primary" href="#book">Book</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>A place for everything.</h1>
+    <p class="lede">Home organizing in Washington, DC and Maryland. Closets, kitchens, offices, and garages, sorted and simplified.</p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#book">Get My Price</a>
+      <a class="btn btn-outline" href="#pricing">See Pricing</a>
+    </div>
+    <!-- PLACEHOLDER STOCK PHOTO (Unsplash), for visualization only. Replace with Brandon's own photo when available. -->
+    <img class="hero-img" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Bright, tidy living room" loading="lazy">
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I organize</h2>
+    <div class="cards">
+      <div class="card">
+        <!-- PLACEHOLDER STOCK PHOTO (Unsplash), for visualization only. -->
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Clothing neatly hung on a rack" loading="lazy">
+        <h3>Closets &amp; Bedrooms</h3>
+        <p class="best">Best for a closet that has outgrown its system, or a bedroom that needs a reset.</p>
+        <ul>
+          <li>Sort, edit, and put every item in its place</li>
+          <li>Clothing grouped so getting dressed is easy</li>
+          <li>Shelves, drawers, and hanging space used well</li>
+          <li>Donation bags bagged and ready to go</li>
+        </ul>
+      </div>
+      <div class="card">
+        <!-- PLACEHOLDER STOCK PHOTO (Unsplash), for visualization only. -->
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Clean, organized kitchen" loading="lazy">
+        <h3>Kitchens &amp; Pantries</h3>
+        <p class="best">Best for a kitchen where finding things takes longer than cooking.</p>
+        <ul>
+          <li>Pantry sorted, grouped, and labeled</li>
+          <li>Cabinets and drawers set up around how you cook</li>
+          <li>Expired and duplicate items cleared out</li>
+          <li>Counter space freed up for daily use</li>
+        </ul>
+      </div>
+      <div class="card">
+        <!-- PLACEHOLDER STOCK PHOTO (Unsplash), for visualization only. -->
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Tidy home office desk" loading="lazy">
+        <h3>Home Offices</h3>
+        <p class="best">Best for a desk buried under paper, or a spare room doing too many jobs.</p>
+        <ul>
+          <li>Paper sorted into keep, file, and shred</li>
+          <li>Desk set up for the work you actually do</li>
+          <li>Supplies and files given a home</li>
+          <li>Cables and clutter cleared from the workspace</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 20px;">Also available: garages, basements, moving and unpacking, and whole-home projects. Ask in the form below.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Flat-rate pricing, no hourly clock</h2>
+    <table>
+      <tr><th>Session</th><th>Best for</th><th class="price">Price</th></tr>
+      <tr><td>3-Hour Session</td><td>One closet or pantry</td><td class="price">$195</td></tr>
+      <tr><td>Half Day (4 hours)</td><td>A kitchen, office, or two small spaces</td><td class="price">$260</td></tr>
+      <tr><td>Full Day (8 hours)</td><td>Several rooms, or one big space</td><td class="price">$480</td></tr>
+      <tr><td>Whole Home</td><td>Larger projects, quoted after a walkthrough</td><td class="price">Custom quote</td></tr>
+    </table>
+    <p class="price-note">Organizing supplies (bins, labels, shelving) are not included in session pricing. We will talk through what your space needs before the session.</p>
+    <p class="price-note">Travel beyond 50 miles of Washington, DC, custom quote, travel costs included.</p>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <h2>Service area</h2>
+    <p>Organizing by Karl serves Washington, DC, Prince George's County, and Montgomery County, Maryland.</p>
+    <p>Outside the area? Ask in the form, I will let you know honestly if I can make it work.</p>
+    <!-- PLACEHOLDER STOCK PHOTO (Unsplash), for visualization only. -->
+    <img class="area-img" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Bright, organized living space" loading="lazy">
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Tell me about your space</strong>, fill out the short form below with the room, the session length, and your preferred date.</li>
+      <li><strong>Get your confirmed price</strong>, I reply by text with your flat-rate price and available times.</li>
+      <li><strong>Enjoy an organized home</strong>, we sort, edit, and set up systems you can keep using after I leave.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>Book your session</h2>
+    <p>Fill this out and I will text you back with your confirmed flat-rate price and available times.</p>
+    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="POST">
+      <input type="hidden" name="Form" value="Organizing by Karl booking">
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-name">Name</label>
+          <input type="text" id="bk-name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="bk-phone">Phone</label>
+          <input type="tel" id="bk-phone" name="Phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bk-email">Email</label>
+        <input type="email" id="bk-email" name="Email">
+      </div>
+      <div class="field">
+        <label for="bk-address">Home address</label>
+        <input type="text" id="bk-address" name="Home address" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bk-space">Space to organize</label>
+          <select id="bk-space" name="Space to organize">
+            <option>Closet</option>
+            <option>Kitchen / Pantry</option>
+            <option>Home Office</option>
+            <option>Garage / Basement</option>
+            <option>Moving / Unpacking</option>
+            <option>Whole Home</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bk-session">Session</label>
+          <select id="bk-session" name="Session">
+            <option>3-Hour Session</option>
+            <option>Half Day (4 hours)</option>
+            <option>Full Day (8 hours)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bk-date">Preferred date</label>
+        <input type="text" id="bk-date" name="Preferred date">
+      </div>
+      <div class="field">
+        <label for="bk-notes">Anything I should know?</label>
+        <textarea id="bk-notes" name="Notes" placeholder="The space, what is not working, pets, access, etc."></textarea>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><input type="text" name="x-sheetmonkey-hp" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary" type="submit">Send My Request</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h3>How is pricing set?</h3>
+      <p>By session length, at a flat rate. You confirm the price before the appointment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need to be home?</h3>
+      <p>Yes, for the first part at least. Organizing is about your stuff and your habits, so we decide together what stays and what goes.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you bring bins and labels?</h3>
+      <p>We talk through supplies before the session. You can buy what your space needs, or I can pick items up and add the cost to your session.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I need to reschedule?</h3>
+      <p>Text me as early as you can and we will find a new time.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I pay?</h3>
+      <p>We will confirm payment options by text when your booking is confirmed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Organizing by Karl &middot; <a href="https://brandonhoffmann.com">brandonhoffmann.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
