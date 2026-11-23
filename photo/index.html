@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!-- BKH Photo page, updated Nov 23, 2026: Brandon's own photos (86, watermarked) replace the stock placeholders; Engagements tab added. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BKH Photo, Simplified Elegance | Portraits, Family, Engagements, Corporate, Editorial, Nature &amp; Weddings in Washington, DC</title>
+<meta name="description" content="BKH Photo, Simplified Elegance. Portraits, family, engagements, corporate, editorial, nature and wedding photography in the Washington, DC area. Flat-rate packages, online gallery delivery within two weeks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #f5f5f5;
+    --muted: #a8a8a8;
+    --line: #262626;
+    --soft: #0d0d0d;
+    --bg: #000000;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.7;
+    background: var(--bg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h1, h2, h3, .btn, nav a, .tab-btn, .field label {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    letter-spacing: 0.18em;
+  }
+  input, textarea, select { text-transform: none; letter-spacing: normal; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .nav-links { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: none;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links .btn { padding: 9px 20px; font-size: 0.85rem; }
+  .nav-links a.btn { text-transform: uppercase; }
+  .nav-links a.btn-primary,
+  .nav-links a.btn-primary:hover { color: #000; }
+  @media (max-width: 640px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+  }
+  .btn-primary { background: var(--ink); color: #000; border-color: var(--ink); }
+  .btn-primary:hover { background: #d4d4d4; border-color: #d4d4d4; }
+  .btn-outline { color: #fff; border-color: #fff; background: transparent; }
+  .btn-outline:hover { background: #fff; color: #000; }
+  .btn-dark-outline { color: var(--ink); border-color: var(--ink); background: transparent; }
+  .btn-dark-outline:hover { background: var(--ink); color: #000; }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: #000;
+  }
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.62;
+  }
+  .hero-content { position: relative; z-index: 2; padding: 64px 20px; color: #fff; }
+  .hero-content h1 {
+    font-size: clamp(2rem, 9vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 18px;
+    white-space: nowrap;
+  }
+  .hero-content .motto {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7vw, 3rem);
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    margin-bottom: 14px;
+    text-transform: none;
+  }
+  .hero-content .sub {
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 34px;
+    text-transform: none;
+  }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+  section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .section-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--ink);
+    margin: 0 auto 18px;
+  }
+  .section-intro {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 36px;
+    text-transform: none;
+  }
+  section p { color: var(--muted); margin-bottom: 12px; font-size: 0.98rem; text-transform: none; }
+  section a { color: var(--ink); }
+
+  /* ---------- Gallery tabs ---------- */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
+  .gallery { display: none; }
+  .gallery.active { display: grid; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 900px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+  .gallery-grid figure { margin: 0; overflow: hidden; }
+  .gallery-grid figure.lead { grid-column: 1 / -1; }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .gallery-grid figure.lead img { aspect-ratio: 16 / 9; }
+  @media (min-width: 640px) { .gallery-grid figure.lead img { aspect-ratio: 21 / 9; } }
+
+  /* ---------- Pricing ---------- */
+  .price-block { margin-bottom: 36px; }
+  .price-block:last-child { margin-bottom: 0; }
+  .price-block h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  th, td { padding: 13px 4px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+  td.price, th.price { text-align: right; font-weight: 500; color: var(--ink); white-space: nowrap; text-transform: none; }
+  td .detail { display: block; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.1em; margin-top: 2px; text-transform: none; }
+  .price-note { font-size: 0.92rem; letter-spacing: 0.1em; margin-top: 14px; }
+  .price-notes { margin-top: 32px; border-top: 1px solid var(--ink); padding-top: 24px; }
+  .price-notes p { margin-bottom: 8px; }
+
+  /* ---------- How it works ---------- */
+  #how { text-transform: none; }
+  .steps { list-style: none; counter-reset: step; max-width: 640px; margin: 0 auto; }
+  .steps li { padding: 14px 0 14px 56px; position: relative; color: var(--muted); border-bottom: 1px solid var(--line); text-transform: none; }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    counter-increment: step;
+    content: "0" counter(step);
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .steps li strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; letter-spacing: 0.12em; }
+
+  /* ---------- Form ---------- */
+  form { margin-top: 28px; }
+  .field { margin-bottom: 18px; }
+  .field-row { display: grid; gap: 18px; }
+  @media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } }
+  .field label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 1rem;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+  }
+  .field textarea { min-height: 110px; resize: vertical; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--ink);
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  .email-line { text-align: center; margin-top: 28px; font-size: 0.95rem; letter-spacing: 0.14em; }
+  .email-line a { font-weight: 500; }
+
+  footer { padding: 36px 0 52px; color: var(--muted); font-size: 0.85rem; text-align: center; letter-spacing: 0.2em; text-transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">BKH Photo</a>
+    <div class="nav-links">
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book">Book</a>
+      <a class="btn btn-primary" href="#book">Book</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="hero-img" src="images/engagements/engagements-01.jpg" alt="Man dipping his fiancee for a kiss in front of the Lincoln Memorial" draggable="false">
+  <div class="hero-content">
+    <h1>BKH Photo</h1>
+    <p class="motto">Simplified Elegance</p>
+    <p class="sub">Portraits &middot; Family &middot; Engagements &middot; Corporate &middot; Editorial &middot; Nature &middot; Weddings</p>
+    <div class="hero-buttons">
+      <a class="btn btn-outline" href="#gallery">View the Work</a>
+      <a class="btn btn-primary" href="#book">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2>My Work</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Portraits, Family, Engagements, Corporate, Editorial, Nature &amp; Weddings</p>
+
+    <div class="tabs" role="tablist" aria-label="Gallery categories">
+      <button class="tab-btn active" data-tab="portrait" role="tab" aria-selected="true">Portrait</button>
+      <button class="tab-btn" data-tab="family" role="tab" aria-selected="false">Family</button>
+      <button class="tab-btn" data-tab="engagements" role="tab" aria-selected="false">Engagements</button>
+      <button class="tab-btn" data-tab="corporate" role="tab" aria-selected="false">Corporate</button>
+      <button class="tab-btn" data-tab="editorial" role="tab" aria-selected="false">Editorial</button>
+      <button class="tab-btn" data-tab="nature" role="tab" aria-selected="false">Nature</button>
+      <button class="tab-btn" data-tab="wedding" role="tab" aria-selected="false">Wedding</button>
+    </div>
+
+    <div class="gallery active" id="gallery-portrait">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/portrait/portrait-01.jpg" alt="Close portrait of a young woman seen through yellow autumn leaves" loading="eager" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-02.jpg" alt="Young woman in a green cardigan smiling on a wooded autumn path" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-03.jpg" alt="Young woman sitting on a fence above a river at sunset" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-04.jpg" alt="Young woman in a red sweater and black vest in autumn woods" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-05.jpg" alt="Young man in a Team Supertramp cap against a dark background" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-06.jpg" alt="Black and white portrait of a smiling man in a suit" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-07.jpg" alt="Black and white portrait of a young woman with braids resting on a sofa" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-08.jpg" alt="Black and white portrait of a young woman with braids leaning on a railing" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-09.jpg" alt="Portrait of a young woman in black lace against deep blue light" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-10.jpg" alt="Young man in a green polo seated against a dark background" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-11.jpg" alt="Portrait of a blonde woman in a gingham top, eyes closed, against black" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-12.jpg" alt="Professional headshot of a woman in a black blazer on a white background" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-13.jpg" alt="Young man in a leather jacket outdoors in winter light" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-14.jpg" alt="Young man in a yellow striped shirt smiling in front of a mural" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-15.jpg" alt="Black and white studio portrait of a man with striking blue eyes" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-16.jpg" alt="Man in a cap at a canyon overlook with a camera on a tripod behind him" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-17.jpg" alt="Young man in a teal sweater against a colorful painted rock wall" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-18.jpg" alt="Young man in a teal sweater leaning against a colorful painted rock wall" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-19.jpg" alt="Black and white portrait of a smiling man at a laptop in an office" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-20.jpg" alt="Skateboarder doing a handstand on a board in a European square" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/portrait/portrait-21.jpg" alt="Young man in a blue plaid shirt sitting on stone steps" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-family">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/family/family-01.jpg" alt="Family of seven posing together by a lake" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-02.jpg" alt="Couple sitting among red tulips in spring" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-03.jpg" alt="Extended family group portrait at a wedding venue" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-04.jpg" alt="Group portrait of children and teenagers at a wedding venue" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-05.jpg" alt="Family of seven with a baby, posing by a lake" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-06.jpg" alt="Family of four silhouetted walking in a lake at sunset" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-07.jpg" alt="Couple embracing among golden autumn trees" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/family/family-08.jpg" alt="Black and white photograph of a couple's shadow on a marble wall" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-engagements">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/engagements/engagements-01.jpg" alt="Man dipping his fiancee for a kiss in front of the Lincoln Memorial" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-02.jpg" alt="Engaged couple sitting together on the grass by a stream" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-03.jpg" alt="Couple leaning against a large tree, smiling" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-04.jpg" alt="Engaged couple embracing among sand dunes" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-05.jpg" alt="Engaged couple sitting together by a dead tree in the dunes" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-06.jpg" alt="Man kissing his fiancee on the cheek in a sunlit forest" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-07.jpg" alt="Silhouette of an engaged couple holding hands at sunset" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-08.jpg" alt="Black and white close portrait of an engaged couple about to kiss" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-09.jpg" alt="Engaged couple embracing beside a rocky stream" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-10.jpg" alt="Black and white portrait of a couple looking out over a lake" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-11.jpg" alt="Engaged couple kissing in golden sunlight" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-12.jpg" alt="Close-up of an engagement ring on a hand resting on a shoulder" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-13.jpg" alt="Engaged couple seen through a window, walking in a garden" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-14.jpg" alt="Black and white portrait of a couple kissing at the base of the Washington Monument" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-15.jpg" alt="Black and white portrait of a couple sitting against a brick wall" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-16.jpg" alt="Engaged couple holding hands against a red brick wall" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-17.jpg" alt="Engaged couple smiling against a red wall covered in ivy" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-18.jpg" alt="Engaged couple kissing in warm sunset light" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/engagements/engagements-19.jpg" alt="Black and white photograph of a couple's shadow on a marble wall" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-corporate">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/corporate/corporate-01.jpg" alt="Catering table with charcuterie and appetizers at a corporate event" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/corporate/corporate-02.jpg" alt="Stylist finishing a client's hair in a salon" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/corporate/corporate-03.jpg" alt="Banquet hall set with round tables for an event" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/corporate/corporate-04.jpg" alt="Banquet table set with glassware and folded napkins" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/corporate/corporate-05.jpg" alt="Performer on stage under red concert lights" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-editorial">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/editorial/editorial-01.jpg" alt="Crowd gathered on a platform at the US Capitol with flags" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-02.jpg" alt="Protester speaking through a megaphone at night in a city street" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-03.jpg" alt="Crowd with flags at the US Capitol" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-04.jpg" alt="Black and white portrait of riot police in helmets" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-05.jpg" alt="Black and white photograph of a person with raised arms at the Reflecting Pool" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-06.jpg" alt="Cyclist racing on a desert road with mountains behind" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-07.jpg" alt="Black and white portrait of a man in a crowd in Guinea" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-08.jpg" alt="Justice Ginsburg's flag-draped casket at the Supreme Court" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/editorial/editorial-09.jpg" alt="Path lights leading toward the US Capitol at dusk" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-nature">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/nature/nature-01.jpg" alt="Cherry blossoms in bloom against a blue sky" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-02.jpg" alt="Couple sitting on a bench in a mountain meadow" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-03.jpg" alt="Irrigation wheel silhouetted against a desert sunset" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-04.jpg" alt="Black and white photograph of the Library of Congress" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-05.jpg" alt="US Capitol dome lit up at dusk" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-06.jpg" alt="Rapids rushing over rocks at Great Falls" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-07.jpg" alt="Washington Monument framed by green tree branches" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-08.jpg" alt="Black and white photograph of an empty Washington, DC street" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-09.jpg" alt="Black and white photograph of an irrigation wheel in the desert" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/nature/nature-10.jpg" alt="Washington Monument with an American flag against a blue sky" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery-wedding">
+      <div class="gallery-grid">
+        <figure class="lead"><img src="images/wedding/wedding-01.jpg" alt="Black and white portrait of a bride and groom embracing on a beach" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-02.jpg" alt="Three-tier wedding cake decorated with pink roses and berries" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-03.jpg" alt="Bride and groom standing together, her red shoes under the dress" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-04.jpg" alt="Black and white portrait of a bride and groom embracing on stone steps" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-05.jpg" alt="Black and white portrait of a bride and groom kissing in a doorway" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-06.jpg" alt="Black and white close-up of a couple's hands showing wedding rings" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-07.jpg" alt="Bride seen from behind, holding her bouquet" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-08.jpg" alt="Bride in a white gown posing among hanging flowers" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-09.jpg" alt="Bride in a white gown among pink hanging flowers" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-10.jpg" alt="Wedding venue ceiling glowing with string lights at dusk" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-11.jpg" alt="Wedding reception under string lights with the cake table" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-12.jpg" alt="Close-up of a bride's hands with her ring, around the groom's neck" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-13.jpg" alt="Bride walking down a path under golden autumn trees" loading="lazy" draggable="false"></figure>
+        <figure><img src="images/wedding/wedding-14.jpg" alt="Groom arriving on a motorcycle as wedding guests watch" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap-narrow">
+    <h2>Pricing</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Flat Rates</p>
+
+    <div class="price-block">
+      <h3>Sessions</h3>
+      <table>
+        <tr><td>Portrait</td><td class="price">$250</td></tr>
+        <tr><td>Family</td><td class="price">$275</td></tr>
+        <tr><td>Engagement</td><td class="price">$300</td></tr>
+      </table>
+    </div>
+
+    <div class="price-block">
+      <h3>Corporate Events</h3>
+      <table>
+        <tr><td>Half Day</td><td class="price">$750</td></tr>
+        <tr><td>Full Day<span class="detail">Up to 8 hours of event coverage</span></td><td class="price">$1,400</td></tr>
+      </table>
+    </div>
+
+    <div class="price-block">
+      <h3>Editorial</h3>
+      <table>
+        <tr><td>Day Rate<span class="detail">News &amp; magazine assignments</span></td><td class="price">Custom quote</td></tr>
+      </table>
+    </div>
+
+    <div class="price-block">
+      <h3>Weddings</h3>
+      <table>
+        <tr><td>Half Day</td><td class="price">$1,000</td></tr>
+        <tr><td>Full Day<span class="detail">8 hours</span></td><td class="price">$1,900</td></tr>
+        <tr><td>Second Shooter<span class="detail">Available on request</span></td><td class="price">Custom quote</td></tr>
+      </table>
+      <p class="price-note">Engagements are included with wedding coverage.</p>
+    </div>
+
+    <div class="price-notes">
+      <p>50% deposit to book. 50% due once done.</p>
+      <p>Rush delivery (24 hours), +$100</p>
+      <p>Referred by family or friends, let me know who sent you over for a special surprise!</p>
+      <p>Travel beyond 50 miles of Washington, DC, custom quote, travel costs included</p>
+      <p>Your photos arrive as an online gallery link within 2 weeks</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap-narrow">
+    <h2>How It Works</h2>
+    <div class="section-rule"></div>
+    <ol class="steps">
+      <li><strong>Tell me about your session</strong>Fill out the form below with your session type and preferred date.</li>
+      <li><strong>Confirm your flat rate</strong>I reply with your price and available times. No hidden fees.</li>
+      <li><strong>Receive your gallery</strong>Your edited photos arrive as an online gallery link within 2 weeks.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap-narrow">
+    <h2>Request a Quote</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Tell Me About Your Session</p>
+    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="POST">
+      <input type="hidden" name="Form" value="BKH Photo quote">
+      <div class="field-row">
+        <div class="field">
+          <label for="q-name">Name</label>
+          <input type="text" id="q-name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="q-email">Email</label>
+          <input type="email" id="q-email" name="Email" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="q-phone">Phone</label>
+          <input type="tel" id="q-phone" name="Phone">
+        </div>
+        <div class="field">
+          <label for="q-date">Preferred Date</label>
+          <input type="text" id="q-date" name="Preferred date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="q-type">Session Type</label>
+        <select id="q-type" name="Session Type">
+          <option>Portrait</option>
+          <option>Family</option>
+          <option>Corporate</option>
+          <option>Editorial</option>
+          <option>Wedding</option>
+          <option>Engagement</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="q-notes">Tell Us More</label>
+        <textarea id="q-notes" name="Tell us more" placeholder="Location, number of people, anything that matters for your session"></textarea>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><input type="text" name="x-sheetmonkey-hp" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary" type="submit">Send My Request</button>
+    </form>
+    <p class="email-line">Prefer email? Write to <a id="email-link">brandonkhoffmann[at]gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 BKH Photo &middot; Washington, DC</p>
+  </div>
+</footer>
+
+<script>
+  // Gallery tabs
+  var tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabButtons.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.querySelectorAll('.gallery').forEach(function (g) {
+        g.classList.remove('active');
+      });
+      document.getElementById('gallery-' + btn.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+
+  // Email protection: the address is assembled in JavaScript so the
+  // page source never holds a complete email address, and the visible
+  // text always stays in [at] form. Clicking still opens a real email
+  // to the address; without JavaScript the link is not clickable but
+  // the [at] address still shows.
+  (function () {
+    var user = 'brandonk' + 'hoffmann';
+    var domain = 'gmail' + '.com';
+    var addr = user + '@' + domain;
+    var link = document.getElementById('email-link');
+    link.href = 'mailto:' + addr;
+  })();
+
+  // Download protection: block right-click on images, block dragging.
+  // This deters casual downloads; screenshots cannot be prevented.
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target && e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (e.target && e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
