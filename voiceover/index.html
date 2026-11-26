@@ -1,4 +1,4 @@
-<!-- Voiceover page v1, Nov 24, 2026. Demos wired to audio/commercial-demo.mp3, audio/corporate-demo.mp3, audio/narration-demo.mp3 in this folder. -->
+<!-- Voiceover page v2, Nov 25, 2026. Demo reel in hero (audio/demo-reel.mp3); five samples in audio/ folder. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +36,7 @@
   .demo h3 { font-family: "Libre Caslon Text", Georgia, serif; font-size: 20px; margin-bottom: 6px; }
   .demo p { color: #b8ad9c; font-size: 17px; margin-bottom: 14px; }
   audio { width: 100%; }
+  .hero .demo { max-width: 560px; margin: 26px auto 0; text-align: left; }
   .about p { margin-bottom: 16px; color: #d8d0bf; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .card { background: #221e19; border: 1px solid #3a342c; border-radius: 12px; padding: 20px; }
@@ -74,34 +75,57 @@
   <p class="tagline">The guy next door. A bright, enthusiastic, warm, and professional voice for all your voiceover needs.</p>
   <div class="hero-buttons">
     <a class="button" href="#contact">Book a session</a>
-    <a class="button secondary" href="#demos">Listen to demos</a>
+    <a class="button secondary" href="#demos">More samples</a>
+  </div>
+  <div class="demo">
+    <h3>Demo Reel</h3>
+    <audio controls preload="metadata">
+      <source src="audio/demo-reel.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 </header>
 
 <main class="wrap">
   <section id="demos">
-    <h2>Demo Reels</h2>
+    <h2>More Samples</h2>
     <div class="demo">
-      <h3>Commercial</h3>
-      <p>Upbeat, friendly reads for ads and spots.</p>
+      <h3>Beyond</h3>
+      <p>Commercial spot. Progress tracking software.</p>
       <audio controls preload="none">
-        <source src="audio/commercial-demo.mp3" type="audio/mpeg">
+        <source src="audio/beyond.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
     <div class="demo">
-      <h3>Corporate</h3>
-      <p>Clear, professional narration for business and training.</p>
+      <h3>Better Water</h3>
+      <p>Commercial spot. Membership read.</p>
       <audio controls preload="none">
-        <source src="audio/corporate-demo.mp3" type="audio/mpeg">
+        <source src="audio/better-water.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
     <div class="demo">
-      <h3>Narration</h3>
-      <p>Warm, engaging storytelling for video and audio.</p>
+      <h3>Mint Budgeting</h3>
+      <p>Commercial spot. Budgeting app.</p>
       <audio controls preload="none">
-        <source src="audio/narration-demo.mp3" type="audio/mpeg">
+        <source src="audio/mint-budgeting.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="demo">
+      <h3>Jamen</h3>
+      <p>Corporate read. Builder of the Year announcement.</p>
+      <audio controls preload="none">
+        <source src="audio/jamen-congrats.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="demo">
+      <h3>U92 Washington</h3>
+      <p>Radio ID. Station identification.</p>
+      <audio controls preload="none">
+        <source src="audio/u92-washington.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
