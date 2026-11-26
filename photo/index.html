@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BKH Photo page, updated Nov 23, 2026: Editorial last everywhere; carousel is 3 slides (engagements, wedding, nature; no editorial, portrait, corporate, or family); full SEO (canonical, Open Graph, Twitter card, JSON-LD with price catalog); centered galleries, natural sizes, no cropping; Brandon's own photos (86, watermarked). -->
+<!-- BKH Photo page, updated Nov 23, 2026: Editorial last everywhere; carousel is 3 slides (engagements, wedding, nature; no editorial, portrait, corporate, or family); phone-sized hero crops for ≤640px (3:4, full-frame on phones); full SEO (canonical, Open Graph, Twitter card, JSON-LD with price catalog); centered galleries, natural sizes, no cropping; Brandon's own photos (86, watermarked). -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -247,6 +247,17 @@
 
     .hero-slides img.active {
         opacity: 0.62;
+    }
+
+    .hero-slides picture {
+        position: absolute;
+        inset: 0;
+    }
+
+    @media (max-width: 640px) {
+        header.hero {
+            min-height: 62vh;
+        }
     }
 
     .hero-content {
@@ -587,6 +598,7 @@
             <div class="nav-links">
                 <a href="#gallery">Gallery</a>
                 <a href="#pricing">Pricing</a>
+                <a href="/nature-prints">Nature Prints</a>
                 <a class="btn btn-primary" href="#book">Book</a>
             </div>
         </div>
@@ -594,9 +606,18 @@
 
     <header class="hero" id="top">
         <div class="hero-slides">
-            <img class="active" src="images/engagements/engagements-01.jpg" alt="Man dipping his fiancee for a kiss in front of the Lincoln Memorial" loading="eager" draggable="false">
-            <img src="images/wedding/wedding-01.jpg" alt="Black and white portrait of a bride and groom embracing on a beach" loading="lazy" draggable="false">
-            <img src="images/nature/nature-01.jpg" alt="Cherry blossoms in bloom against a blue sky" loading="lazy" draggable="false">
+            <picture>
+                <source media="(max-width: 640px)" srcset="images/engagements/engagements-01-mobile.jpg">
+                <img class="active" src="images/engagements/engagements-01.jpg" alt="Man dipping his fiancee for a kiss in front of the Lincoln Memorial" loading="eager" draggable="false">
+            </picture>
+            <picture>
+                <source media="(max-width: 640px)" srcset="images/wedding/wedding-01-mobile.jpg">
+                <img src="images/wedding/wedding-01.jpg" alt="Black and white portrait of a bride and groom embracing on a beach" loading="lazy" draggable="false">
+            </picture>
+            <picture>
+                <source media="(max-width: 640px)" srcset="images/nature/nature-01-mobile.jpg">
+                <img src="images/nature/nature-01.jpg" alt="Cherry blossoms in bloom against a blue sky" loading="lazy" draggable="false">
+            </picture>
         </div>
         <div class="hero-content">
             <h1>BKH Photo</h1>
