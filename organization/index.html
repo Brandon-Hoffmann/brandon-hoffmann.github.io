@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organizing by Karl, Home Organization in Washington, DC &amp; Maryland</title>
-<meta name="description" content="Organizing by Karl, home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate sessions, no hourly clock.">
+<meta name="description" content="Organizing by Karl, home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate pricing by room size, no hourly clock.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Organizing by Karl, Home Organization in Washington, DC &amp; Maryland">
-<meta property="og:description" content="Home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate sessions, no hourly clock.">
+<meta property="og:description" content="Home organizing in Washington, DC and Maryland. Closets, kitchens, home offices, and garages, sorted and simplified. Flat-rate pricing by room size, no hourly clock.">
 <meta property="og:url" content="https://brandonhoffmann.com/organizingbykarl">
 <script type="application/ld+json">
 {
@@ -15,8 +15,8 @@
   "@type": "ProfessionalService",
   "name": "Organizing by Karl",
   "url": "https://brandonhoffmann.com/organizingbykarl",
-  "description": "Home organizing in Washington, DC and Maryland. Flat-rate organizing sessions for closets, kitchens, home offices, garages, and moves.",
-  "priceRange": "$195 - $480",
+  "description": "Home organizing in Washington, DC and Maryland. Flat-rate organizing priced by room size for closets, kitchens, home offices, garages, and moves.",
+  "priceRange": "$350 - $999",
   "areaServed": [
     { "@type": "City", "name": "Washington, District of Columbia" },
     { "@type": "AdministrativeArea", "name": "Prince George's County, Maryland" },
@@ -289,13 +289,14 @@
   <div class="wrap">
     <h2>Flat-rate pricing, no hourly clock</h2>
     <table>
-      <tr><th>Session</th><th>Best for</th><th class="price">Price</th></tr>
-      <tr><td>3-Hour Session</td><td>One closet or pantry</td><td class="price">$195</td></tr>
-      <tr><td>Half Day (4 hours)</td><td>A kitchen, office, or two small spaces</td><td class="price">$260</td></tr>
-      <tr><td>Full Day (8 hours)</td><td>Several rooms, or one big space</td><td class="price">$480</td></tr>
+      <tr><th>Room</th><th>Includes</th><th class="price">Price</th></tr>
+      <tr><td>Small Room</td><td>Closet, pantry, or bathroom</td><td class="price">Starting at $350</td></tr>
+      <tr><td>Medium Room</td><td>Bedroom, home office, or kitchen</td><td class="price">Starting at $650</td></tr>
+      <tr><td>Large Room</td><td>Primary bedroom, basement, or garage</td><td class="price">Starting at $999</td></tr>
       <tr><td>Whole Home</td><td>Larger projects, quoted after a walkthrough</td><td class="price">Custom quote</td></tr>
     </table>
-    <p class="price-note">Organizing supplies (bins, labels, shelving) are not included in session pricing. We will talk through what your space needs before the session.</p>
+    <p class="price-note">Prices are starting rates per room, with a $350 minimum visit. Heavily cluttered rooms are quoted after a free assessment, send photos in the form below for an accurate price.</p>
+    <p class="price-note">Organizing supplies (bins, labels, shelving) are not included in room pricing. We will talk through what your space needs before we start.</p>
     <p class="price-note">Travel beyond 50 miles of Washington, DC, custom quote, travel costs included.</p>
   </div>
 </section>
@@ -314,7 +315,7 @@
   <div class="wrap">
     <h2>How it works</h2>
     <ol class="steps">
-      <li><strong>Tell me about your space</strong>, fill out the short form below with the room, the session length, and your preferred date.</li>
+      <li><strong>Tell me about your space</strong>, fill out the short form below with the room and your preferred date. You can attach photos of the space so I can quote accurately.</li>
       <li><strong>Get your confirmed price</strong>, I reply by text with your flat-rate price and available times.</li>
       <li><strong>Enjoy an organized home</strong>, we sort, edit, and set up systems you can keep using after I leave.</li>
     </ol>
@@ -323,9 +324,9 @@
 
 <section id="book">
   <div class="wrap">
-    <h2>Book your session</h2>
+    <h2>Book your organizing</h2>
     <p>Fill this out and I will text you back with your confirmed flat-rate price and available times.</p>
-    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="POST">
+    <form action="https://api.sheetmonkey.io/form/7p6rBz4MAUvemgNJfH3DEf" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="Form" value="Organizing by Karl booking">
       <div class="field-row">
         <div class="field">
@@ -359,11 +360,12 @@
           </select>
         </div>
         <div class="field">
-          <label for="bk-session">Session</label>
-          <select id="bk-session" name="Session">
-            <option>3-Hour Session</option>
-            <option>Half Day (4 hours)</option>
-            <option>Full Day (8 hours)</option>
+          <label for="bk-size">Room size</label>
+          <select id="bk-size" name="Room size">
+            <option>Small room (closet, pantry, bathroom)</option>
+            <option>Medium room (bedroom, office, kitchen)</option>
+            <option>Large room (primary bedroom, basement, garage)</option>
+            <option>Whole home</option>
             <option>Not sure yet</option>
           </select>
         </div>
@@ -376,6 +378,11 @@
         <label for="bk-notes">Anything I should know?</label>
         <textarea id="bk-notes" name="Notes" placeholder="The space, what is not working, pets, access, etc."></textarea>
       </div>
+      <div class="field">
+        <label for="bk-photos">Photos of your rooms (optional)</label>
+        <input type="file" id="bk-photos" name="Room photos" accept="image/*" multiple>
+        <p class="price-note">Photos help me give you an accurate price before we talk. You can add more than one.</p>
+      </div>
       <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><input type="text" name="x-sheetmonkey-hp" tabindex="-1" autocomplete="off"></div>
       <button class="btn btn-primary" type="submit">Send My Request</button>
     </form>
@@ -387,7 +394,7 @@
     <h2>Questions</h2>
     <div class="faq-item">
       <h3>How is pricing set?</h3>
-      <p>By session length, at a flat rate. You confirm the price before the appointment.</p>
+      <p>By room size, at a flat rate. Prices start at $350 for a small room, and you confirm the price before the appointment.</p>
     </div>
     <div class="faq-item">
       <h3>Do I need to be home?</h3>
@@ -395,7 +402,7 @@
     </div>
     <div class="faq-item">
       <h3>Do you bring bins and labels?</h3>
-      <p>We talk through supplies before the session. You can buy what your space needs, or I can pick items up and add the cost to your session.</p>
+      <p>We talk through supplies before we start. You can buy what your space needs, or I can pick items up and add the cost to your booking.</p>
     </div>
     <div class="faq-item">
       <h3>What if I need to reschedule?</h3>
